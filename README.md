@@ -1,6 +1,6 @@
 # Sistema de Agenda Eletrônica
 
-O Sistema de Agenda Eletrônica utiliza o PHP, SimpleDOM, XPath, JQuery e muito mais. 
+O Sistema de Agenda Eletrônica utiliza o PHP, SimpleDOM, XPath, JQuery, Bootstrap e muito mais. 
 
 Detalhes: Não utiliza tabela. 
 
