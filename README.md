@@ -1,11 +1,7 @@
-# Sistema de Agenda Eletrônica
+# Sistema de Agenda Eletrônica - XML
 
-O Sistema de Agenda Eletrônica utiliza o PHP, SimpleDOM, XPath, JQuery, Bootstrap e muito mais. 
+O Sistema de Agenda Eletrônica foi desenvolvido em PHP, SimpleDOM, XPath, JQuery, Bootstrap e muito mais. Os dados são gravados em um arquivo .xml; não utiliza banco de dados. 
 
-Detalhes: Não utiliza tabela. 
-
-O simplexml só funciona a partir da versão 5 do PHP. 
-
-Não clicar no botão "Adicionar Novo Contato" quando estiver editando, pois não funcionará.  
+O <a href="https://code.google.com/archive/p/simpledom/">SimpleXML</a> só funciona a partir da versão 5 do PHP. 
 
 Instalação: Simples e rápido. Descompactar o arquivo no diretório (www ou htdocs) do servidor web (apache).
