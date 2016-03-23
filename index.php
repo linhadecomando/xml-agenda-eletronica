@@ -50,9 +50,9 @@
     <div class="row">
         <div class="col-md-4">
 
-            <? if (empty($action)){ ?>
+            <?php if (empty($action)){ ?>
                 <a href="index.php?action=add" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span> NOVO CONTATO</a>
-            <? } ?>
+            <?php } ?>
 
             <?php
             if($_REQUEST){

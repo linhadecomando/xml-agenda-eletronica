@@ -44,7 +44,7 @@
 	if (isset($_POST['submit']) && $_POST['submit'] == 1)
 	{
 		// pegando o ultimo elemento (nó) do xml
-		$getLastID = $xml->XPath("dados[last()]");
+		$getLastID = $xml->xpath("dados[last()]");
 
 		$lastID	= $getLastID[0]['id'];
 
@@ -69,6 +69,6 @@
 		<div class="alert alert-success"><strong></strong> Dados inseridos corretamente.</div>
 		<!--// refresh para retornar a página principal -->
 		<meta HTTP-EQUIV='refresh' CONTENT='<?=$tempo?>;URL=index.php'>
-		<?
+		<?php
 	}
 	?>

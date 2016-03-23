@@ -59,7 +59,7 @@
                     </td>
                 </tr>
             </tbody>
-	        <?
+	        <?php
             }
             ?>
 	    </table>
@@ -69,6 +69,6 @@
     {
 	?>
 		<div class="alert alert-info"><strong>Aviso!</strong> Contato não cadastrado.</div>
-	<?
+	<?php
     }
     ?>
