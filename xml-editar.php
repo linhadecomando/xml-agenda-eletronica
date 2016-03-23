@@ -1,6 +1,6 @@
     <?php
     $id_xml = intval($_GET['id']);
-	$result = $xml->XPath("dados[@id=$id_xml]");
+	$result = $xml->xpath("dados[@id=$id_xml]");
     ?>
     <div class="panel panel-default">
         <div class="panel-heading">
