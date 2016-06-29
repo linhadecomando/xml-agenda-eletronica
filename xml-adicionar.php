@@ -25,9 +25,9 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="inputNome" class="col-sm-2 control-label">E-mail:</label>
+					<label for="inputNome" class="col-sm-2 control-label">E-mail:*</label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control" id="inputEmail" name='inputEmail' placeholder="e-mail">
+						<input type="email" class="form-control" id="inputEmail" name='inputEmail' placeholder="e-mail" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -46,13 +46,17 @@
 		// pegando o ultimo elemento (nó) do xml
 		$getLastID = $xml->xpath("dados[last()]");
 
-		$lastID	= $getLastID[0]['id'];
+		if(!empty($getLastID)){
+			$lastID	= $getLastID[0]['id'];
+		}else{
+			$lastID	= 0;
+		};
 
 		// atribuindo os dados via post
 		$id		= $lastID+1;
 		$nome	= $_POST["inputNome"];
 		$tel	= $_POST["inputTel"];
-		$cel	= $_POST["inputCel"];
+		$cel	= !empty($_POST["inputCel"]) ? $_POST["inputCel"] : "";
 		$email	= $_POST["inputEmail"];
 
 		// criando um novo nó com seus atributos

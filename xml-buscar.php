@@ -53,7 +53,7 @@
                         </a>
                     </td>
                     <td align="center">
-                        <a href="index.php?action=del&id=<?=$dados["id"]?>">
+                        <a href="index.php?action=del&id=<?=$dados["id"]?>" id="linkExcluir">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
                     </td>
@@ -68,7 +68,25 @@
     else
     {
 	?>
-		<div class="alert alert-info"><strong>Aviso!</strong> Contato não cadastrado.</div>
+		<div class="alert alert-info"><strong>Aviso!</strong> Nenhum contato cadastrado no momento.</div>
 	<?php
     }
     ?>
+
+    <div id="modalExclusao" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Confirmação de Exclusão</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Deseja realmente excluir o registro selecionado?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnExcluir">SIM</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">NÃO</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->

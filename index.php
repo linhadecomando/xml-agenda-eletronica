@@ -39,56 +39,88 @@
 </head>
 <body>
 
-<div class="container">
-	<h1>SISTEMA DE AGENDA ELETRÔNICA</h1>
-	<p>Desenvolvido por <a href="http://www.linhadecomando.com" target="_blank">linhadecomando.com</a>, utilizando PHP, SimpleDOM, JQuery, Bootstrap e muito mais.</p>
-	<p><strong>Detalhes</strong>: Não utiliza tabela. O SimpleXML só funciona a partir da versão 5 do PHP.</p>
-	<p><strong>Instalação</strong>: Simples e rápido. Descompactar o arquivo no diretório (www ou htdocs) do servidor web (apache).</p>
-
-    <hr />
-
-    <div class="row">
-        <div class="col-md-4">
-
-            <?php if (empty($action)){ ?>
-                <a href="index.php?action=add" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span> NOVO CONTATO</a>
-            <?php } ?>
-
-            <?php
-            if($_REQUEST){
-                switch ($action){
-                    case "add":
-                        // adicionando
-                        include ('xml-adicionar.php');
-                        break;
-                    case "del":
-                        // apagando
-                        include ('xml-deletar.php');
-                        break;
-                    case "edt":
-                        // editando
-                        include ('xml-editar.php');
-                        break;
+    <div class="container">
+        <h1>SISTEMA DE AGENDA ELETRÔNICA</h1>
+        <p>Desenvolvido por <a href="http://www.linhadecomando.com" target="_blank">linhadecomando.com</a>, utilizando PHP, SimpleDOM, JQuery, Bootstrap e muito mais.</p>
+        <p><strong>Detalhes</strong>: Não utiliza tabela. O SimpleXML só funciona a partir da versão 5 do PHP.</p>
+        <p><strong>Instalação</strong>: Simples e rápido. Descompactar o arquivo no diretório (www ou htdocs) do servidor web (apache).</p>
+    
+        <hr />
+    
+        <div class="row">
+            <div class="col-md-4">
+    
+                <?php if (empty($action)){ ?>
+                    <a href="index.php?action=add" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span> NOVO CONTATO</a>
+                <?php } ?>
+    
+                <?php
+                if($_REQUEST){
+                    switch ($action){
+                        case "add":
+                            // adicionando
+                            include ('xml-adicionar.php');
+                            break;
+                        case "del":
+                            // apagando
+                            include ('xml-deletar.php');
+                            break;
+                        case "edt":
+                            // editando
+                            include ('xml-editar.php');
+                            break;
+                    }
                 }
-            }
-            ?>
-        </div><!-- col-md-4 -->
+                ?>
+            </div><!-- col-md-4 -->
+    
+            <div class="col-md-8">
+                <?php require 'xml-buscar.php' ?>
+            </div><!-- col-md-8 -->
+    
+        </div><!-- row -->
+    
+    </div><!-- container -->
 
-        <div class="col-md-8">
-            <?php require 'xml-buscar.php' ?>
-        </div><!-- col-md-8 -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="js/main.js" type="text/javascript"></script>
+    <!-- MakedInput -->
+    <script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
-    </div><!-- row -->
+    <script type="text/javascript">
+        $(function () {
+            $("#linkExcluir").click(function (e) {
 
-</div><!-- container -->
+                var $modal = $('#modalExclusao');
+                parent = $(this).closest('tr');
+                $modal.data("parent", parent);
+                $modal.modal('show');
 
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                $modal.find("#btnExcluir").on('click', function(){
+                    var parent = $modal.data("parent");
 
-<script src="js/main.js" type="text/javascript"></script>
-<!-- MakedInput -->
-<script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
-<!-- bootstrap -->
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
+                    $modal.modal('hide');
+
+                    parent.fadeOut(400, function () {
+                        parent.remove();
+                    });
+                    var href = $("#linkExcluir").attr("href");
+                    window.location.href = href;
+
+
+                });
+
+                e.preventDefault();
+                //return false;
+
+            });
+
+        });
+    </script>
+
 </body>
 </html>
