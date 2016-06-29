@@ -49,6 +49,7 @@
                     <td><?=$dados["email"]?></td>
                     <td align="center">
                         <a href="index.php?action=edt&id=<?=$dados["id"]?>" id="btnEditar">
+                            
                             <span class="glyphicon glyphicon-edit"></span>
                         </a>
                     </td>
