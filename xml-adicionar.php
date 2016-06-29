@@ -70,7 +70,7 @@
 		// inserindo os dados no arquivo xml
 		file_put_contents( 'agenda.xml', $xml->asPrettyXML() );
 		?>
-		<div class="alert alert-success"><strong></strong> Dados inseridos corretamente.</div>
+		<div class="alert alert-success"><strong>Sucesso!</strong> Dados inseridos corretamente.</div>
 		<!--// refresh para retornar a página principal -->
 		<meta HTTP-EQUIV='refresh' CONTENT='<?=$tempo?>;URL=index.php'>
 		<?php
