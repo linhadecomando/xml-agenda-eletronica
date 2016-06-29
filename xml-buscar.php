@@ -73,6 +73,7 @@
     }
     ?>
 
+    
     <div id="modalExclusao" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
