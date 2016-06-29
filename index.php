@@ -110,15 +110,11 @@
                     });
                     var href = $("#linkExcluir").attr("href");
                     window.location.href = href;
-
-
                 });
 
+                // prevenindo clique no link
                 e.preventDefault();
-                //return false;
-
             });
-
         });
     </script>
 
