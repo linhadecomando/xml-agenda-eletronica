@@ -30,6 +30,12 @@
 						<input type="email" class="form-control" id="inputEmail" name='inputEmail' placeholder="e-mail" required>
 					</div>
 				</div>
+                <div class="form-group">
+                    <label for="inputObservacao" class="col-sm-12">Observação:</label><br>
+                    <div class="col-sm-12">
+                        <textarea class="form-control" id="inputObservacao" name='inputObservacao'></textarea>
+                    </div>
+                </div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<input type='submit' value='ATUALIZAR' class='btn btn-primary' id='btnAtualizar'>
@@ -58,6 +64,7 @@
 		$tel	= $_POST["inputTel"];
 		$cel	= !empty($_POST["inputCel"]) ? $_POST["inputCel"] : "";
 		$email	= $_POST["inputEmail"];
+        $obs	= $_POST["inputObservacao"];
 
 		// criando um novo nó com seus atributos
 		$dados = $xml->addChild('dados');
@@ -66,6 +73,7 @@
 		$dados->addAttribute('tel', $tel);
 		$dados->addAttribute('cel', $cel);
 		$dados->addAttribute('email', $email);
+        $dados->addAttribute('obs', $obs);
 
 		// inserindo os dados no arquivo xml
 		file_put_contents( 'agenda.xml', $xml->asPrettyXML() );
