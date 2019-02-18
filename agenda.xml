@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agenda>
-  <dados id="1" nome="Fulano de Tal" tel="(77) 7777-7777" cel="(88) 8888-8888" email="fulano.tal@email.com.br"/>
-  <dados id="2" nome="Ciclano de Tal" tel="(55) 5555-5555" cel="(66) 6666-6666" email="ciclano@mail.com.br"/>
+  <dados id="1" nome="Fulano de Tal" tel="(77) 7777-7777" cel="(88) 8888-8888" email="fulano.tal@email.com.br" obs="Observação"/>
+  <dados id="2" nome="Ciclano de Tal" tel="(55) 5555-5555" cel="(66) 6666-6666" email="ciclano@mail.com.br" obs="Observação"/>
 </agenda>
